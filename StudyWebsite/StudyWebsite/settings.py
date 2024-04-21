@@ -42,6 +42,10 @@ INSTALLED_APPS = [
     'accounts',
     'review_sets',
     'contact',
+    'attachments',
+    'common_questions',
+    'student_dashboard',
+
 ]
 
 MIDDLEWARE = [
