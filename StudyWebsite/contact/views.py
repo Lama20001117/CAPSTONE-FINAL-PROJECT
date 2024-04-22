@@ -16,18 +16,20 @@ def contact_view(request:HttpRequest):
             )
             
             new_con.save()
-            return redirect("contact:message_view")
+            return redirect("main:index_view")
         except Exception as e:
                     print(e)
         
 
     return render(request, "contact/contact.html")
 
+
 def message_view(request:HttpRequest):
  if not request.user.is_superuser:
         return redirect(request, "main/not_found.html")
  contacts = ContactSupport.objects.all()
  return render(request, "contact/message.html", {"contacts" : contacts })
+
 
 def delete_message(request:HttpRequest ,msg_id):
   
